@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site for Mobiles,Electronics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(237, 237, 237);
+
+    }
+
+    #mag {
+        font-size: 25px;
+        color: rgb(29, 116, 255);
+    }
+
+    #sbox {
+        height: 35px;
+        width: 520px;
+        border-radius: 1px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        font-size: 15px;
+    }
+
+    #but {
+        background-color: white;
+        border: none;
+        position: relative;
+        left: -45px;
+        top: 5px;
+        cursor: pointer;
+
+    }
+
+    #log {
+        background-color: white;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        width: 130px;
+        height: 33px;
+        position: relative;
+        left: -10px;
+        color: rgb(29, 116, 255);
+        margin-right: 29px;
+        border-radius: 1px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        cursor: pointer;
+    }
+
+    #cart {
+        display: inline-block;
+    }
+
+    #logo {
+        position: relative;
+        top: -3px;
+        height: 40px;
+        width: 100px;
+        cursor: pointer;
+    }
+
+    .container {
+        display: flex;
+        position: sticky;
+        justify-content: space-around;
+        background-color: rgb(32, 117, 255);
+        padding-top: 10px;
+        max-height: 150px;
+        padding-left: 140px;
+        padding-right: 140px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    #cart {
+        color: white;
+        font-size: 20px;
+        position: relative;
+        top: 2.5px;
+
+
+    }
+
+    .link {
+        text-decoration: none;
+        color: white;
+        vertical-align: middle;
+        font-size: 17px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: bold;
+
+    }
+
+    #pos {
+        margin-top: 5px;
+        margin-right: 60px;
+    }
+
+    #more {
+        margin-top: 5px;
+        margin-right: 60px;
+    }
+
+    #oncemore {
+        margin-top: 2.5px;
+    }
+
+    .text {
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Source Sans Pro', sans-serif;
+        padding-top: 10px;
+    }
+
+    .text:hover {
+        color: rgb(32, 117, 255);
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-around;
+        background-color: white;
+        padding: 18px 70px 16px 70px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .offer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imgt {
+        height: 60px;
+    }
+
+    .slider {
+        content: "";
+        width: 97vw;
+        height: 280px;
+        background-image: url("d1.PNG");
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-size: 100% 100%;
+        justify-content: center;
+        margin-left: 12px;
+        animation: change 21s linear infinite;
+
+
+
+    }
+
+    @keyframes change {
+        0% {
+            background-image: url("d1.PNG");
+        }
+
+        25% {
+            background-image: url("d2.PNG");
+        }
+
+        50% {
+            background-image: url("d3.PNG");
+        }
+
+        75% {
+            background-image: url("d4.PNG");
+        }
+
+
+        100% {
+            background-image: url("d1.PNG");
+        }
+    }
+
+    .execute {
+        background-color: rgb(36, 120, 255);
+        padding: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Source Sans Pro', sans-serif;
+        cursor: pointer;
+        color: white;
+        border: none;
+        width: 90px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .dod {
+        display: flex;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .box1 {
+        width: fit-content;
+        display: flex;
+    }
+
+    .inbox1 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding: 12px 28px 12px 28px;
+    }
+
+    .box1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+
+    #re {
+        height: 364px;
+        width: 215px;
+    }
+
+    .inbox2 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6px;
+        background-color: white;
+        padding: 18px;
+        box-sizing: border-box;
+    }
+
+    h2 {
+        padding-left: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .deal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgd {
+        padding: 25px;
+        height: 200px;
+        transition: all 0.1s ease;
+
+    }
+
+    .imgd:hover {
+        transform: scale(1.05);
+    }
+
+    #glass {
+        width: 220px;
+        position: relative;
+        height: 130px;
+        top: 60px;
+
+    }
+
+    #tex {
+        margin-top: 69px;
+        position: relative;
+    }
+
+    .box2 {
+        background-color: white;
+        padding: 2px;
+        margin-right: 10px;
+    }
+
+    .l1 {
+        color: black;
+        font-family: 'Source Sans Pro', sans-serif;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+
+    }
+
+    .l2 {
+        color: green;
+        font-family: 'Source Sans Pro', sans-serif;
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 8px;
+
+    }
+
+    .l3 {
+        color: grey;
+        font-family: 'Source Sans Pro', sans-serif;
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 8px;
+
+    }
+
+    #don {
+        width: 97vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .donate {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .topoffer {
+        margin-top: 10px;
+        width: 97vw;
+        display: flex;
+        justify-content: center;
+        margin-left: 18px;
+    }
+
+    .imgs {
+        height: 260px;
+        width: 33%;
+        margin-right: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .inbox1a {
+        margin-top: 10px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        width: 97.4vw;
+        margin-bottom: 1px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .inbox1b {
+        margin-top: 1px;
+        display: flex;
+        background-color: white;
+        justify-content: space-evenly;
+        width: 97.4vw;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        box-sizing: border-box;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .imgm {
+        height: 160px;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    .container2 {
+        margin-left: 10px;
+    }
+
+    .imgm:hover {
+        transform: scale(1.04);
+    }
+
+    .imgs1 {
+        height: 240px;
+        width: 33%;
+        margin-right: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .inbox2b {
+        display: flex;
+        background-color: white;
+        padding-left: 25px;
+        padding-bottom: 25px;
+        box-sizing: border-box;
+        width: 97.4vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .imgrv {
+        height: 180px;
+        width: 200px;
+        padding: 20px;
+        margin-top: 5px;
+    }
+
+    .rv2 {
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    .rv2:hover
+    {
+        color: rgb(32, 117, 255);
+    }
+    .deala {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin-right: 40px;
+
+    }
+
+    .review {
+        background-color: rgb(12, 136, 12);
+        color: white;
+        padding: 2px 6px 2px 6px;
+        border-radius: 4px;
+        font-size: 14px;
+
+    }
+
+    #star {
+        color: white;
+        font-size: 0.1px;
+    }
+
+    .rate {
+        color: grey;
+        font-size: 16px;
+
+    }
+
+    .rating {
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 17px;
+    }
+    footer{
+        background-color: #172337;
+        position: relative;
+    }
+    .foot{
+        display: flex;
+        max-width: 1500px;
+        margin: auto;
+        margin-bottom: 40px;
+        
+
+    }
+    .foota
+    {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        box-sizing: border-box;
+        margin-right: 70px;
+        margin-left: 45px;
+        
+    }
+    .footb
+    {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        margin-left: 15px;
+        padding-left: 20px;
+    }
+    .footb .f1
+    {
+        margin-right: 22px;
+        padding-right: 22px;
+    }
+    .foota li{
+        list-style: none;
+        line-height: 22px;
+    }
+    .foota li a{
+        text-decoration: none;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 13px;
+        color: white;
+    }
+    .foota li a:hover{
+        text-decoration: underline;
+    }
+    .foota h3
+    {
+        color: gray;
+        text-transform: uppercase;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 13px;
+        font-weight: 200;
+        padding: 30px 0 15px 0;
+    }
+    .footb h3{
+
+        color: gray;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 13px;
+        font-weight: 200;
+        padding: 30px 0 15px 0;
+
+    }
+    .foota .f1{
+        margin-right: 60px;
+    }
+    .footb p
+    {
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .ending
+    {
+        padding-top: 2px;
+        display: flex;
+        box-sizing: border-box;
+        margin-left:20px;
+        margin-right: 25px;
+        
+    }
+   .ending p,a{
+     color: white;
+     font-family: 'Source Sans Pro', sans-serif;
+        font-size: 14px;
+     text-decoration: none;
+   }
+   .ending li
+   {
+    padding: 25px 7px 25px 0;
+    list-style: none;
+    display: flex;
+    color: gold;
+    font-size: 16px;
+   }
+   .ending ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+   }
+   .ending li img{
+    width: 410px;
+   }
+   .line
+   {
+    width: 100%;
+    background-color:rgb(195, 192, 192);
+    height: 0.1px;
+    opacity: 0.2;
+   }
+   #part
+   {
+    margin-top: 38px;
+     width: 0.5px;
+     height: 140px;
+     opacity: 0.2;
+
+   }
+</style>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <img src="flip.png" alt="" id="logo">
+        </div>
+        <div class="head">
+            <input type="text" id="sbox" placeholder="     Search for product, brand and more">
+            <button id="but"><i class="fa-solid fa-magnifying-glass" id="mag"></i></button>
+        </div>
+        <div class="head">
+            <button id="log">Login</button>
+        </div>
+        <div class="head" id="pos">
+            <span class="top"><a href="#" class="link">Become a seller</a></span>
+        </div>
+        <div class="head" id="more">
+            <span class="top"><a href="#" class="link">More</a></span>
+        </div>
+        <div class="head" id="oncemore">
+            <i class="fa-solid fa-cart-shopping" id="cart"></i>&nbsp;<span class="top"><a href="#"
+                    class="link">Cart</a></span>
+        </div>
+    </div>
+    <div class="menu">
+
+        <div class="offer"><img src="1.webp" class="imgt"><a href="#" class="text">Top Offers</a></div>
+        <div class="offer"><img src="2.webp" class="imgt"><a href="#" class="text">Grocery</a></div>
+        <div class="offer"><img src="3.webp" class="imgt"><a href="#" class="text">Mobiles</a></div>
+        <div class="offer"><img src="4.webp" class="imgt"><a href="#" class="text">Fashion</a></div>
+        <div class="offer"><img src="5.webp" class="imgt"><a href="#" class="text">Electronics</a></div>
+        <div class="offer"><img src="6.webp" class="imgt"><a href="#" class="text">Home</a></div>
+        <div class="offer"><img src="7.webp" class="imgt"><a href="#" class="text">Appliances</a></div>
+        <div class="offer"><img src="8.webp" class="imgt"><a href="#" class="text">Travel</a></div>
+        <div class="offer"><img src="9.webp" class="imgt"><a href="#" class="text">Beauty, Toy & More</a></div>
+    </div><br>
+    <div class="slider">
+        <span></span>
+    </div><br>
+    <div class="dod">
+        <div class="box1">
+            <div class="inbox1">
+                <h2>Deals of the Day</h2>
+                <button class="execute">VIEW ALL</button>
+
+            </div>
+            <div class="inbox2">
+                <div class="deal"><img src="i1.webp" alt="" class="imgd"><a href="#" class="l1">Titan,
+                        Fastrack,Sonata</a><a href="#" class="l2">Under <span>&#8377;</span>399 +Extra5% Off</a><a
+                        href="#" class="l3">Best Selling Styles!</a></div>
+                <div class="deal"><img src="i2.webp" alt="" class="imgd"><a href="#" class="l1">Remote control, Indoor
+                        G..</a><a href="#" class="l2">Upto80% +Extra10% Off</a><a href="#" class="l3">Miss&Chief, Lego &
+                        more</a></div>
+                <div class="deal"><img src="i3.webp" alt="" class="imgd"><a href="#" class="l1">Trending Kurta
+                        Sets</a><a href="#" class="l2">Under <span>&#8377;</span> 599</a><a href="#"
+                        class="l3">Handpicked Styles!</a></div>
+                <div class="deal"><img src="i4.webp" alt="" class="imgd"><a href="#" class="l1">Stylish Home
+                        Decoratives</a><a href="#" class="l2">From <span>&#8377;</span> 69</a><a href="#"
+                        class="l3">Grab or Gone</a></div>
+                <div class="deal"><img src="i5.webp" alt="" class="imgd"><a href="#" class="l1">Jewellery Set</a><a
+                        href="#" class="l2">Under <span>&#8377;</span>499 +Extra10% Off</a><a href="#" class="l3">For
+                        Every Special Days!</a></div>
+                <div class="deal"><img src="i6.webp" alt="" class="imgd" id="glass"><a id="tex" href="#"
+                        class="l1">Stylish Sunglasses</a><a href="#" class="l2">Under <span>&#8377;</span>599 Upto10%
+                        Off</a><a href="#" class="l3">Grab The Best Deal !!!</a></div>
+            </div>
+
+            <div class="special">
+
+            </div>
+
+        </div>
+        <div class="box2">
+            <img src="re.webp" alt="" id="re">
+        </div>
+    </div>
+    <div class="donate">
+        <img src="donate.PNG" alt="" id="don">
+    </div>
+    <div class="topoffer">
+        <img src="s1.PNG" alt="" class="imgs">
+        <img src="s2.PNG" alt="" class="imgs">
+        <img src="s3.PNG" alt="" class="imgs">
+    </div>
+    <div class="container2">
+        <div class="inbox1a">
+            <h2>Shop Monthly Essentials</h2>
+            <button class="execute">VIEW ALL</button>
+
+        </div>
+        <div class="inbox1b">
+            <div class="deal"><img src="m1.webp" alt="" class="imgm"><a href="#" class="l1">Titan, Fastrack,Sonata</a><a
+                    href="#" class="l2">Under <span>&#8377;</span>399 +Extra5% Off</a></div>
+            <div class="deal"><img src="m2.webp" alt="" class="imgm"><a href="#" class="l1">Remote control, Indoor
+                    G..</a><a href="#" class="l2">Upto80% +Extra10% Off</a></div>
+            <div class="deal"><img src="m3.webp" alt="" class="imgm"><a href="#" class="l1">Trending Kurta Sets</a><a
+                    href="#" class="l2">Under <span>&#8377;</span> 599</a></div>
+            <div class="deal"><img src="m4.webp" alt="" class="imgm"><a href="#" class="l1">Stylish Home
+                    Decoratives</a><a href="#" class="l2">From <span>&#8377;</span> 69</a></div>
+            <div class="deal"><img src="m5.webp" alt="" class="imgm"><a href="#" class="l1">Jewellery Set</a><a href="#"
+                    class="l2">Under <span>&#8377;</span>499 +Extra10% Off</a></div>
+            <div class="deal"><img src="m6.webp" alt="" class="imgm"><a href="#" class="l1">Stylish Sunglasses</a><a
+                    href="#" class="l2">Under <span>&#8377;</span>599 Upto10% Off</a></div>
+            <div class="deal"><img src="m7.webp" alt="" class="imgm"><a href="#" class="l1">Stylish Sunglasses</a><a
+                    href="#" class="l2">Under <span>&#8377;</span>599 Upto10% Off</a></div>
+        </div>
+    </div>
+
+    <div class="topoffer">
+        <img src="mo1.PNG" alt="" class="imgs1">
+        <img src="mo2.PNG" alt="" class="imgs1">
+        <img src="mo3.PNG" alt="" class="imgs1">
+    </div><br>
+
+    <div class="container2">
+        <div class="inbox1a">
+            <h2>Recently Viewed</h2>
+            <button class="execute">VIEW ALL</button>
+
+        </div>
+        <div class="inbox2b">
+            <div class="deala"><img src="clean.PNG" alt="" class="imgrv"><a href="#" class="rv2">Pidilite T16 Roff Cera
+                    Clean Professional Tile, Floor and Ceramic Cleaner</a>
+                <div class="rating"><span class="review">4 <i class="fa-solid fa-star"
+                            id="star"></i></span>&nbsp;&nbsp;<span class="rate">(7,316)</span></div><span
+                    class="price"><b>&#8377;150</b>&nbsp;&nbsp;<span
+                        style="color:gray; font-size: 15px; font-weight: bold;"><s>&#8377;299</s></span>&nbsp;&nbsp;<span
+                        style="color:green;font-size: 15px; font-weight: bold;">50% off</span>
+            </div>
+            <div class="deala"><img src="ink.PNG" alt="" class="imgrv"><a href="#" class="rv2">trendvision GT 51 & GT52
+                    Ink Refill Ink For use in HP DeskJet 5810</a>
+                <div class="rating"><span class="review">3.4 <i class="fa-solid fa-star"
+                            id="star"></i></span>&nbsp;&nbsp;<span class="rate">(233)</span></div><span
+                    class="price"><b>&#8377;448</b>&nbsp;&nbsp;<span
+                        style="color:gray; font-size: 15px; font-weight: bold;"><s>&#8377;699</s></span>&nbsp;&nbsp;<span
+                        style="color:green;font-size: 15px; font-weight: bold;">35% off</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br><br>
+
+    <footer>
+        <div class="foot">
+            <div class="foota">
+                <div class="f1">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Flipkart Stories</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Flipkart Wholesale</a></li>
+                        <li><a href="#">Corporate Information</a></li>
+                    </ul>
+                </div>
+                <div class="f1">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Payment</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Cancellation & Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Report Infringement</a></li>
+                    </ul>
+                </div>
+                <div class="f1">
+                    <h3>Policy</h3>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </div>
+                <div class="f1">
+                    <h3>Social</h3>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </div>
+            </div>
+            <hr id="part">
+            <div class="footb">
+                <div class="f1">
+                    <h3>Mail Us:</h3>
+                    <p>Flipkart Internet Private Limited,<br>
+                        Buildings Alyssa, Begonia &<br>
+                        Clove Embassy Tech Village,<br>
+                        Outer Ring Road, Devarabeesanahalli Village,<br>
+                        Bengaluru, 560103,<br>
+                        Karnataka, India</p>
+                </div>
+                <div class="f1">
+                    <h3>Registered Office Address:</h3>
+                    <p>
+                        Flipkart Internet Private Limited,<br>
+                        Buildings Alyssa, Begonia &<br>
+                        Clove Embassy Tech Village,<br>
+                        Outer Ring Road, Devarabeesanahalli Village,<br>
+                        Bengaluru, 560103,<br>
+                        Karnataka, India<br>
+                        CIN : U51109KA2012PTC066107<br>
+                        Telephone: <span style="color:rgb(36, 120, 255);">044-45614700</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="ending">
+            <ul>
+                <li><i class="fa-solid fa-briefcase" id="last"></i>&nbsp;&nbsp;<a href="#">Become a Seller</a></li>
+                <li><i class="fa-brands fa-galactic-republic" class="end"></i>&nbsp;&nbsp;<a href="#">Advertise</a></li>
+                <li><i class="fa-solid fa-gift" class="end"></i>&nbsp;&nbsp;<a href="#">Gift Cards</a></li>
+                <li><i class="fa-solid fa-circle-question" class="end"></i>&nbsp;&nbsp;<a href="#">Help Center</a></li>
+                <li><p><i class="fa-regular fa-copyright"></i>&nbsp;2007-2022 Flipkart.com</p></li>
+                <li><img src="pay.PNG" alt=""></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
